@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para minha mulher ❤️</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd6e7, #ffeef5, #ffd1e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      color: #5a2940;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      background: rgba(255,255,255,0.75);
+      padding: 30px 22px;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(120, 40, 70, 0.18);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .heart {
+      font-size: 65px;
+      animation: pulse 1.3s infinite;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      background: #ff5c8a;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 7px;
+      transition: 0.2s;
+      box-shadow: 0 5px 15px rgba(255, 92, 138, 0.3);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff4077;
+    }
+
+    #mensagem {
+      margin-top: 22px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.6;
+      min-height: 60px;
+    }
+
+    .surpresa {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 20px;
+      background: #fff0f6;
+      animation: aparecer 0.7s ease;
+    }
+
+    .surpresa h2 {
+      margin-bottom: 10px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 22px;
+      animation: subir 6s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h1>Oi, minha mulher 🥺❤️</h1>
+
+    <p class="subtitle">
+      Eu sei que você tá com cólica e provavelmente não tá no seu melhor humor...
+      então eu fiz isso aqui só pra tentar arrancar um sorrisinho seu. 😭❤️
+    </p>
+
+    <button onclick="mensagemCarinho()">
+      💗 Quero carinho
+    </button>
+
+    <button onclick="mensagemEngracada()">
+      😂 Tentar me fazer rir
+    </button>
+
+    <button onclick="abraço()">
+      🫂 Abraço virtual
+    </button>
+
+    <div id="mensagem"></div>
+
+    <button onclick="mostrarSurpresa()">
+      🎁 Tenho uma surpresa...
+    </button>
+
+    <div class="surpresa" id="surpresa">
+
+      <h2>💌 Uma coisinha pra você</h2>
+
+      <p>
+        Se eu pudesse, eu estaria aí agora mesmo te dando um abraço,
+        fazendo carinho em você e tentando cuidar dessa cólica chata.
+        🥺❤️
+        <br><br>
+
+        Então, enquanto eu não posso estar aí pessoalmente,
+        considera esse site como meu abraço.
+        <br><br>
+
+        E lembra:
+        <strong>você é muito amada, sua linda. ❤️</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const mensagensCarinho = [
+      "Ei, meu amor... respira. Eu tô aqui com você. ❤️",
+      "Queria poder te abraçar agora e ficar fazendo carinho até você melhorar. 🥺",
+      "Você não precisa estar feliz o tempo todo. Pode ficar quietinha e receber meu carinho. ❤️",
+      "Se eu pudesse, roubava essa cólica de você e ficava com ela no seu lugar. 😭",
+      "Você é minha mulher, então hoje sua única obrigação é ficar confortável. 🫂❤️"
+    ];
+
+    const mensagensEngracadas = [
+      "🚨 ATENÇÃO 🚨 A cólica foi oficialmente declarada inimiga número 1 do nosso relacionamento.",
+      "Eu gostaria de conversar com a responsável por essa cólica. Temos algumas coisas a resolver. 😡",
+      "Cólica: 0. Minha vontade de te mimar: 1000. 😎❤️",
+      "Se eu aparecer aí com uma bolsa de água quente, não faça perguntas. Só aceite. 😭",
+      "Essa cólica tá se achando demais. Alguém precisa avisar que você já tem namorado. 😤❤️"
+    ];
+
+    function mensagemCarinho() {
+      const aleatoria =
+        mensagensCarinho[Math.floor(Math.random() * mensagensCarinho.length)];
+
+      document.getElementById("mensagem").innerHTML = aleatoria;
+    }
+
+    function mensagemEngracada() {
+      const aleatoria =
+        mensagensEngracadas[Math.floor(Math.random() * mensagensEngracadas.length)];
+
+      document.getElementById("mensagem").innerHTML = aleatoria;
+    }
+
+    function abraço() {
+      document.getElementById("mensagem").innerHTML =
+        "🫂🫂🫂 <br> ABRAÇO VIRTUAL ENTREGUE! <br><br> Aperta forte e fica aqui comigo um pouquinho. ❤️";
+    }
+
+    function mostrarSurpresa() {
+      document.getElementById("surpresa").style.display = "block";
+    }
+
+    function criarCoracao() {
+
+      const heart = document.createElement("div");
+
+      heart.classList.add("floating-heart");
+
+      const coracoes = ["❤️", "💗", "💕", "💖", "💞"];
+
+      heart.innerHTML =
+        coracoes[Math.floor(Math.random() * coracoes.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(criarCoracao, 700);
+
+  </script>
+
+</body>
+</html>
